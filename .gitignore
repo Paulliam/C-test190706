@@ -1,5 +1,7 @@
 /example/example/bin/*
 /example/example/obj/*
+/example/.vs/*
 
 /EXAMPLE01/*/bin/*
 /EXAMPLE01/*/obj/*
+/EXAMPLE01/.vs/*
