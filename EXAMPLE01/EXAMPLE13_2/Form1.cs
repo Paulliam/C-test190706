@@ -23,7 +23,7 @@ namespace EXAMPLE13_2
             Graphics g = e.Graphics;
             Pen redPen = new Pen(Color.LightBlue, 2);//定义一个画笔，颜色LightBlue，线宽2
             g.DrawLine(redPen, 0, 0, 300, 500);
-            for (int i = 0; i < 100; i++)
+            for (int i = 0; i < 5; i++)
             {
                 var x1 = r.Next(this.Width);
                 var x2 = r.Next(this.Width);

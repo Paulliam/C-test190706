@@ -29,22 +29,24 @@ namespace EXAMPLE15_4_3
         {  //以下拉列表框中的驱动器路径名作为GetDirectories()方法检索目录的入参            
             try
             {
-                dirs = Directory.GetDirectories(comboBox1.Text); //获取comboBox1.Text指定目录下的所有子目录
+                dirs = Directory.GetDirectories(comboBox1.Text); //获取comboBox1.Text指定目录下的所有子目录的路径名
                 listBox1.Items.Clear();//清空目录显示列表框listBox1中的所有显示项            
                 foreach (var n in dirs)
                 {
-                    listBox1.Items.Add(n);//将各个子目录名添加进目录显示列表框
-                    //listBox1.Items.Add(Path.GetFileNameWithoutExtension(n));//Path.Getxx()方法,可获取指定目录相关信息
+                    listBox1.Items.Add(n);                                    //将各个子目录下的文件夹路径名添加进目录显示列表框
+                    //listBox1.Items.Add(Path.GetFileNameWithoutExtension(n));//Path.Getxx()方法,可获取指定目录文件夹的文件夹名字  --只是将各个子目录下的文件夹名字添加进目录显示列表框      
                 }
                 listBox2.Items.Clear();//清空文件显示列表框listBox2中的所有显示项
-                foreach (var n in Directory.GetFiles(comboBox1.Text))
+                foreach (var n in Directory.GetFiles(comboBox1.Text)) //获取comboBox1.Text指定目录下的所有文件的路径名
                 {
-                    listBox2.Items.Add(n);//将各个子目录名添加进文件显示列表框
-                    //listBox2.Items.Add(Path.GetFileName(n));
+                    listBox2.Items.Add(n);                        //将子目录下各个文件的路径名添加进文件显示列表框
+                    //listBox2.Items.Add(Path.GetFileName(n));    //将子目录下各个文件的文件名添加进文件显示列表框
                 }
             }
             catch (IOException excep)//当下拉框选中空磁盘的时候，会有一个奇怪的异常产生
             {
+                listBox1.Items.Clear();
+                listBox2.Items.Clear();
                 listBox1.Items.Add("");//在列表框底部先空白一行列表，
                 listBox1.Items.Add("IOException'name is: " + excep.GetType().Name); //紧接着，着这里打印异常消息提示
                 listBox1.Items.Add("IOException'message is: " + excep.Message);
@@ -76,14 +78,14 @@ namespace EXAMPLE15_4_3
             listBox1.Items.Clear();//清空目录显示列表框listBox1中的所有显示项 
             foreach (var n in dirs)//【【【数组dirs为空时，不报错，且不执行遍历
             {
-                //listBox1.Items.Add(n);//将各个子目录名添加进目录显示列表框
-                listBox1.Items.Add(Path.GetFileNameWithoutExtension(n));//Path.Getxx()方法,可获取指定目录相关信息
+                listBox1.Items.Add(n);//将各个子目录的路径名添加进目录显示列表框
+                //listBox1.Items.Add(Path.GetFileNameWithoutExtension(n));//Path.Getxx()方法,只获取显示目录文件夹的文件夹名字              
             }
             listBox2.Items.Clear();//清空文件显示列表框listBox2中的所有显示项
             foreach (var n in Directory.GetFiles(currentDir))
             {
-                //listBox2.Items.Add(n);//将各个子目录名添加进文件显示列表框
-                listBox2.Items.Add(Path.GetFileName(n));
+                //listBox2.Items.Add(n);                       //将子目录下各个文件的路径名添加进文件显示列表框
+                listBox2.Items.Add(Path.GetFileName(n));       //将子目录下各个文件的文件名添加进文件显示列表框
             }
         }
     }

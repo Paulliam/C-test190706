@@ -75,7 +75,7 @@
             // 新建ToolStripMenuItem
             // 
             this.新建ToolStripMenuItem.Name = "新建ToolStripMenuItem";
-            this.新建ToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
+            this.新建ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.新建ToolStripMenuItem.Text = "新建";
             // 
             // 保存ToolStripMenuItem
@@ -159,26 +159,26 @@
             this.b剪切ToolStripMenuItem,
             this.c粘贴ToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 92);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(109, 70);
             // 
             // a拷贝ToolStripMenuItem
             // 
             this.a拷贝ToolStripMenuItem.Name = "a拷贝ToolStripMenuItem";
-            this.a拷贝ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.a拷贝ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.a拷贝ToolStripMenuItem.Text = "A拷贝";
             this.a拷贝ToolStripMenuItem.Click += new System.EventHandler(this.拷贝ToolStripMenuItem_Click);
             // 
             // b剪切ToolStripMenuItem
             // 
             this.b剪切ToolStripMenuItem.Name = "b剪切ToolStripMenuItem";
-            this.b剪切ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.b剪切ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.b剪切ToolStripMenuItem.Text = "B剪切";
             this.b剪切ToolStripMenuItem.Click += new System.EventHandler(this.b剪切ToolStripMenuItem_Click);
             // 
             // c粘贴ToolStripMenuItem
             // 
             this.c粘贴ToolStripMenuItem.Name = "c粘贴ToolStripMenuItem";
-            this.c粘贴ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.c粘贴ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.c粘贴ToolStripMenuItem.Text = "C粘贴";
             this.c粘贴ToolStripMenuItem.Click += new System.EventHandler(this.c粘贴ToolStripMenuItem_Click);
             // 

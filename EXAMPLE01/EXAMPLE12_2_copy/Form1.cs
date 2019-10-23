@@ -22,17 +22,7 @@ namespace EXAMPLE12_2_copy
             textBoxOutput.Text = textBoxInput.Text;//用户自主代码段--此处将输入文本框中的字符串拷贝到输出文本框
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void label1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click_2(object sender, EventArgs e)
         {
 
         }

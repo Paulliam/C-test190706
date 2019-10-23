@@ -60,7 +60,6 @@
             this.输入文本框.Size = new System.Drawing.Size(77, 12);
             this.输入文本框.TabIndex = 2;
             this.输入文本框.Text = "请输入字符：";
-            this.输入文本框.Click += new System.EventHandler(this.label1_Click);
             // 
             // 输出文本框
             // 

@@ -20,7 +20,8 @@ namespace EXAMPLE12_6
         private void Form1_Load(object sender, EventArgs e)//加载form框时图片显示区pictureBox1做一个初始化显示
         {
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;//PictureBoxSizeMode.Zoom;Zoom为一图片显示方式，居中，缩放等等
-            pictureBox1.ImageLocation = @"C:\Users\Administrator.USER-20140101DA\Desktop\test\EXAMPLE01\EXAMPLE12_6\图片\TabControl(控件)1.png";
+            //pictureBox1.ImageLocation = @"C:\Users\Administrator.USER-20140101DA\Desktop\test\EXAMPLE01\EXAMPLE12_6\图片\TabControl(控件)1.png";
+            pictureBox1.Image = Properties.Resources.TabControl_控件_1;
         }
         bool FlgClick = false;
         private void buttonGo_Click(object sender, EventArgs e)//点击“开始显示图片”按钮触发事件-开始计时

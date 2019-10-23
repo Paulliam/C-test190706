@@ -28,7 +28,7 @@ namespace EXAMPLE12_5
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)//列表框中选中的项发生变化时，该事件产生
         {
             if (listBox1.SelectedIndex >= 0 && 
-                listBox1.SelectedIndex < listBox1.Items.Count)//只有在鼠标选中某一项时，才操作，没选中是，值为-1
+                listBox1.SelectedIndex < listBox1.Items.Count)//只有在鼠标选中某一项时，才操作，没选中时，值为-1
                  //textBoxInput.Text = Convert.ToString(listBox1.Items[listBox1.SelectedIndex]);//转换为字符串方法一
                  textBoxInput.Text = (listBox1.Items[listBox1.SelectedIndex]).ToString();     //转换为字符串方法二
         }
@@ -38,6 +38,17 @@ namespace EXAMPLE12_5
             if(listBox1.SelectedIndex>=0 &&
                listBox1.SelectedIndex<listBox1.Items.Count)//只有在鼠标选中某一项时，才操作，没选中是，值为-1
                 listBox1.Items.RemoveAt(listBox1.SelectedIndex);//点击删除按钮，删除列表中的某项
+        }
+
+        private void textBoxInput_KeyDown(object sender, KeyEventArgs e)    //输入框中一旦输入一个元素，若非空，即可添加该元素到列表框
+        {
+            if (Keys.Enter == e.KeyCode)
+            {
+                if (textBoxInput.Text != string.Empty)//如果输入框不为空，点击添加按钮时
+                {    //要将数据添加到列表框
+                    listBox1.Items.Add(textBoxInput.Text);
+                }
+            }
         }
     }
 }

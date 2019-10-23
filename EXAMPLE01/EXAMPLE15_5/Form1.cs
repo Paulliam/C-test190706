@@ -40,16 +40,25 @@ namespace EXAMPLE15_5
             else
                 return;
             mydata.valStr = textBox3.Text;
-            FileStream fs =new FileStream("D:\\新建文件夹\\mydata",FileMode.OpenOrCreate,FileAccess.Write);
-            BinaryFormatter bf =new BinaryFormatter();
-            bf.Serialize(fs,mydata);//将对象mydata序列化到给定流fs
-            fs.Close();
+
+            try
+            {
+                FileStream fs = new FileStream("D:\\C#测试\\mydata", FileMode.OpenOrCreate, FileAccess.Write);
+                BinaryFormatter bf = new BinaryFormatter();
+                bf.Serialize(fs, mydata);//将对象mydata序列化到给定流fs
+                fs.Close();
+            }
+            catch (DirectoryNotFoundException)
+            {
+                Directory.CreateDirectory("D:\\C#测试");
+            }
+            
         }
 
         private void buttonRead_Click(object sender, EventArgs e)
         {
             MyData mydata = new MyData();
-            FileStream fs = new FileStream("D:\\新建文件夹\\mydata", FileMode.Open, FileAccess.Read);
+            FileStream fs = new FileStream("D:\\C#测试\\mydata", FileMode.Open, FileAccess.Read);
             BinaryFormatter bf = new BinaryFormatter();
             mydata = (MyData)bf.Deserialize(fs);//将指定的流反序列化为对象图形,返回类型为Object,需强制转换为MyData
             textBox1.Text = mydata.valInt.ToString();
